@@ -46,14 +46,8 @@ const Hero = ({ setActiveSection }) => {
                 backgroundClip: 'text',
               }}
             >
-              [Your Name]
             </Typography>
-            <Typography
-              variant="h4"
-              component="h2"
-              color="text.secondary"
-              sx={{ mb: 3, fontWeight: 500 }}
-            >
+            <Typography variant="h4" color="primary" gutterBottom>
               Mathematics & Computer Science Student
             </Typography>
             <Typography

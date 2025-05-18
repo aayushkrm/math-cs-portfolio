@@ -70,14 +70,9 @@ const Navbar = ({ activeSection, setActiveSection, scrolled }) => {
                 </Button>
               ))}
               <Box sx={{ display: 'flex', gap: 1, ml: 2 }}>
-                <Button
-                  href="https://github.com/yourusername"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{ minWidth: 'auto', p: 1 }}
-                >
-                  <FaGithub size={20} style={{ color: '#333' }} />
-                </Button>
+                <IconButton color="inherit" href="https://github.com/aayushkrm" target="_blank" rel="noopener noreferrer">
+                  <FaGithub />
+                </IconButton>
                 <Button
                   href="https://linkedin.com/in/yourusername"
                   target="_blank"

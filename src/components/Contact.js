@@ -14,22 +14,22 @@ const Contact = ({ setActiveSection }) => {
 
   const contactMethods = [
     {
-      icon: <FaEnvelope size={24} />,
+      icon: <EmailIcon fontSize="large" />,
       title: 'Email',
-      value: 'your.email@example.com',
-      href: 'mailto:your.email@example.com',
+      value: 'aayush.kumarm.3myself@gmail.com',
+      link: 'mailto:aayush.kumarm.3myself@gmail.com'
     },
     {
-      icon: <FaPhoneAlt size={24} />,
+      icon: <PhoneIcon fontSize="large" />,
       title: 'Phone',
-      value: '+1 (123) 456-7890',
-      href: 'tel:+11234567890',
+      value: '+7 (989) 352-9683',
+      link: 'tel:+79893529683'
     },
     {
-      icon: <FaMapMarkerAlt size={24} />,
+      icon: <LocationOnIcon fontSize="large" />,
       title: 'Location',
-      value: 'City, Country',
-      href: '#',
+      value: 'Tomsk, Russia',
+      link: '#'
     },
   ];
 

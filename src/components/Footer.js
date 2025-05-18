@@ -44,7 +44,7 @@ const Footer = () => {
           }}
         >
           <Typography variant="body2" color="text.secondary">
-            © {currentYear} [Your Name]. All rights reserved.
+            &copy; {currentYear} Ayush Kumar. All rights reserved.
           </Typography>
           
           <Box sx={{ display: 'flex', gap: 1 }}>

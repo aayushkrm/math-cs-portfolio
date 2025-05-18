@@ -117,14 +117,18 @@ const About = ({ setActiveSection }) => {
                       },
                     }}
                   >
-                    <Typography variant="h4" sx={{ mb: 2 }}>
-                      {item.icon}
+                    <Typography variant="h4" component="h2" gutterBottom>
+                      About Me
                     </Typography>
-                    <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
-                      {item.title}
+                    <Typography variant="body1" paragraph>
+                      I'm a first-year Mathematics and Computer Science student at Tomsk State University, 
+                      Faculty of Mechanics and Mathematics. I'm passionate about solving complex problems 
+                      and building innovative solutions through code.
                     </Typography>
-                    <Typography variant="body1" color="text.secondary">
-                      {item.description}
+                    <Typography variant="body1" paragraph>
+                      Based in Tomsk, Russia, I'm constantly exploring new technologies and mathematical concepts.
+                      My academic journey focuses on the intersection of mathematics and computer science,
+                      where I can apply theoretical knowledge to practical programming challenges.
                     </Typography>
                   </Paper>
                 </motion.div>
