@@ -2,6 +2,9 @@ import { Box, Container, Typography, TextField, Button, Grid, Paper, useTheme, u
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
+import EmailIcon from '@mui/icons-material/Email';
+import PhoneIcon from '@mui/icons-material/Phone';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 const Contact = ({ setActiveSection }) => {
   const [ref, inView] = useInView({

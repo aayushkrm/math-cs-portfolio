@@ -1,133 +1,158 @@
-import { Box, Typography, Button, Container, useTheme, useMediaQuery } from '@mui/material';
-import { motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { Box, Typography, Button, Container, IconButton, useTheme, alpha } from '@mui/material';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-scroll';
+import SchoolIcon from '@mui/icons-material/School';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import { styled, keyframes } from '@mui/material/styles';
 
-const Hero = ({ setActiveSection }) => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+// Animation keyframes
+const float = keyframes`
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+`;
 
+const FloatingShape = styled('div')(({ theme }) => ({
+  position: 'absolute',
+  borderRadius: '50%',
+  background: `linear-gradient(135deg, ${alpha(theme.palette.primary.light, 0.1)} 0%, ${alpha(theme.palette.secondary.light, 0.1)} 100%)`,
+  filter: 'blur(40px)',
+  zIndex: 0,
+}));
+
+const ScrollIndicator = styled(motion.div)({
+  position: 'absolute',
+  bottom: '40px',
+  left: '50%',
+  transform: 'translateX(-50%)',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  cursor: 'pointer',
+  zIndex: 1,
+});
+
+const Hero = () => {
   return (
     <Box
       id="home"
       sx={{
         minHeight: '100vh',
         display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
         alignItems: 'center',
-        pt: 8,
-        position: 'relative',
-        overflow: 'hidden',
-        background: 'linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%)',
+        textAlign: 'center',
+        p: 3,
+        background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)',
+        borderBottom: '1px solid #dee2e6'
       }}
     >
-      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
-        <Box sx={{ maxWidth: isMobile ? '100%' : '70%' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+      <Container maxWidth="md">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <Typography
+            variant="h2"
+            component="h1"
+            sx={{
+              fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4rem' },
+              fontWeight: 700,
+              mb: 3,
+              color: '#212529',
+              lineHeight: 1.2
+            }}
           >
-            <Typography
-              variant="h6"
-              color="primary"
-              gutterBottom
-              sx={{ fontWeight: 600, mb: 2 }}
-            >
-              Hello, I'm
-            </Typography>
-            <Typography
-              variant="h2"
-              component="h1"
+            Ayush Kumar
+          </Typography>
+          
+          <Typography 
+            variant="h5"
+            sx={{
+              color: '#495057',
+              mb: 3,
+              fontWeight: 500,
+              lineHeight: 1.3
+            }}
+          >
+            Mathematics & Computer Science Student
+          </Typography>
+          
+          <Box sx={{ mb: 4 }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 1 }}>
+              <SchoolIcon sx={{ mr: 1, color: '#6c757d' }} />
+              <Typography component="span" sx={{ color: '#495057' }}>
+                Tomsk State University, Faculty of Mechanics and Mathematics
+              </Typography>
+            </Box>
+            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <LocationOnIcon sx={{ mr: 1, color: '#6c757d' }} />
+              <Typography component="span" sx={{ color: '#495057' }}>
+                Tomsk, Russia
+              </Typography>
+            </Box>
+          </Box>
+          
+          <Typography
+            variant="body1"
+            sx={{ 
+              mb: 4, 
+              fontSize: '1.1rem', 
+              lineHeight: 1.8,
+              color: 'text.secondary'
+            }}
+          >
+            Passionate about mathematical modeling, algorithm design, and software development.
+            Currently exploring the intersection of theoretical mathematics and practical
+            computer science applications.
+          </Typography>
+          
+          <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
+            <Button
+              component={Link}
+              to="contact"
+              variant="contained"
+              size="large"
               sx={{
-                fontWeight: 800,
-                mb: 2,
-                background: 'linear-gradient(45deg, #1976d2 30%, #21CBF3 90%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
+                px: 4,
+                py: 1.5,
+                borderRadius: '8px',
+                textTransform: 'none',
+                fontWeight: 600,
+                boxShadow: '0 4px 14px 0 rgba(25, 118, 210, 0.3)',
+                '&:hover': {
+                  boxShadow: '0 6px 20px 0 rgba(25, 118, 210, 0.4)',
+                },
               }}
             >
-            </Typography>
-            <Typography variant="h4" color="primary" gutterBottom>
-              Mathematics & Computer Science Student
-            </Typography>
-            <Typography
-              variant="body1"
-              color="text.secondary"
-              sx={{ mb: 4, fontSize: '1.1rem', lineHeight: 1.8 }}
-            >
-              I'm a first-year student passionate about solving complex problems through the
-              intersection of mathematics and computer science. I enjoy exploring algorithms,
-              data structures, and their real-world applications.
-            </Typography>
-            <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
-              <Button
-                component={Link}
-                to="contact"
-                spy={true}
-                smooth={true}
-                duration={500}
-                variant="contained"
-                color="primary"
-                size="large"
-                onSetActive={() => setActiveSection('contact')}
-                sx={{
-                  px: 4,
-                  py: 1.5,
-                  borderRadius: '8px',
-                  textTransform: 'none',
-                  fontWeight: 600,
-                  boxShadow: '0 4px 14px 0 rgba(25, 118, 210, 0.3)',
-                  '&:hover': {
-                    boxShadow: '0 6px 20px 0 rgba(25, 118, 210, 0.4)',
-                  },
-                }}
-              >
-                Get In Touch
-              </Button>
-              <Button
-                component={Link}
-                to="projects"
-                spy={true}
-                smooth={true}
-                duration={500}
-                variant="outlined"
-                color="primary"
-                size="large"
-                onSetActive={() => setActiveSection('projects')}
-                sx={{
-                  px: 4,
-                  py: 1.5,
-                  borderRadius: '8px',
-                  textTransform: 'none',
-                  fontWeight: 600,
+              Get In Touch
+            </Button>
+            <Button
+              component={Link}
+              to="projects"
+              variant="outlined"
+              size="large"
+              sx={{
+                px: 4,
+                py: 1.5,
+                borderRadius: '8px',
+                textTransform: 'none',
+                fontWeight: 600,
+                borderWidth: '2px',
+                '&:hover': {
                   borderWidth: '2px',
-                  '&:hover': {
-                    borderWidth: '2px',
-                  },
-                }}
-              >
-                View My Work
-              </Button>
-            </Box>
-          </motion.div>
-        </Box>
+                },
+              }}
+            >
+              View My Work
+            </Button>
+          </Box>
+        </motion.div>
       </Container>
-      <Box
-        sx={{
-          position: 'absolute',
-          right: 0,
-          top: '50%',
-          transform: 'translateY(-50%)',
-          width: '40%',
-          height: '80%',
-          display: { xs: 'none', lg: 'block' },
-          backgroundImage: 'url(https://source.unsplash.com/random/800x800/?mathematics,technology)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          borderRadius: '30% 0 0 30%',
-          boxShadow: '-10px 0 30px rgba(0, 0, 0, 0.1)',
-        }}
-      />
     </Box>
   );
 };
