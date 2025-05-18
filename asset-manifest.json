@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/math-cs-portfolio/static/css/main.74c790f0.css",
-    "main.js": "/math-cs-portfolio/static/js/main.868450ee.js",
+    "main.js": "/math-cs-portfolio/static/js/main.a7c2b141.js",
     "static/js/453.56ccac77.chunk.js": "/math-cs-portfolio/static/js/453.56ccac77.chunk.js",
     "index.html": "/math-cs-portfolio/index.html",
     "main.74c790f0.css.map": "/math-cs-portfolio/static/css/main.74c790f0.css.map",
-    "main.868450ee.js.map": "/math-cs-portfolio/static/js/main.868450ee.js.map",
+    "main.a7c2b141.js.map": "/math-cs-portfolio/static/js/main.a7c2b141.js.map",
     "453.56ccac77.chunk.js.map": "/math-cs-portfolio/static/js/453.56ccac77.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.74c790f0.css",
-    "static/js/main.868450ee.js"
+    "static/js/main.a7c2b141.js"
   ]
 }
