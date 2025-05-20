@@ -8,17 +8,17 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: <FaGithub size={20} />,
-      url: 'https://github.com/yourusername',
+      url: 'https://github.com/aayushkrm', // Updated
       label: 'GitHub',
     },
     {
       icon: <FaLinkedin size={20} />,
-      url: 'https://linkedin.com/in/yourusername',
+      url: 'https://linkedin.com/in/yourusername', // Kept as is
       label: 'LinkedIn',
     },
     {
       icon: <FaEnvelope size={20} />,
-      url: 'mailto:your.email@example.com',
+      url: 'mailto:aayush.kumarm.3myself@gmail.com', // Updated
       label: 'Email',
     },
   ];

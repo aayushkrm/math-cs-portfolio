@@ -21,9 +21,9 @@ const FiCode = FiCodeIcon;
 const projects = [
   {
     title: 'Computational Mathematics Toolkit',
-    description: 'A comprehensive library implementing numerical methods for solving differential equations, linear algebra operations, and statistical analysis with visualization capabilities.',
+    description: 'A comprehensive library developed to implement and investigate numerical methods for solving differential equations, linear algebra operations, and statistical analysis, complete with visualization capabilities.',
     technologies: ['Python', 'NumPy', 'SciPy', 'Matplotlib'],
-    image: 'https://source.unsplash.com/random/800x600/?mathematics,code',
+    image: 'https://images.unsplash.com/photo-1518605700399-5f689ff035d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGFscGhvYmV0JTIwY29kZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=80',
     github: '#',
     demo: '#',
     featured: true,
