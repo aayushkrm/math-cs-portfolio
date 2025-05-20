@@ -1,7 +1,7 @@
 {
   "name": "math-cs-portfolio",
   "version": "0.1.0",
-  "homepage": "https://aayushkrm.github.io",
+  "homepage": "https://aayushkrm.github.io/math-cs-portfolio/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.14.0",
