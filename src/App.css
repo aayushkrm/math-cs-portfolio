@@ -9,7 +9,7 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
+/* body {
   margin: 0;
   font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -17,7 +17,7 @@ body {
   color: #333;
   line-height: 1.6;
   overflow-x: hidden;
-}
+} */
 
 /* Section Styling */
 section {
@@ -26,26 +26,26 @@ section {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+/* h1, h2, h3, h4, h5, h6 {
   margin: 0 0 15px;
   font-weight: 700;
   line-height: 1.2;
   color: #2c3e50;
-}
+} */
 
-p {
+/* p {
   margin-bottom: 1rem;
   color: #555;
-}
+} */
 
 a {
   text-decoration: none;
-  color: #1976d2;
+  color: #1A237E; /* Updated to theme.palette.primary.main */
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #1565c0;
+  color: #000051; /* Updated to theme.palette.primary.dark */
   text-decoration: none;
 }
 

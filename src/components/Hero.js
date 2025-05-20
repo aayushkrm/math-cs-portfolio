@@ -106,9 +106,7 @@ const Hero = () => {
               color: 'text.secondary'
             }}
           >
-            Passionate about mathematical modeling, algorithm design, and software development.
-            Currently exploring the intersection of theoretical mathematics and practical
-            computer science applications.
+            A dedicated Mathematics and Computer Science student at Tomsk State University. My academic and research pursuits center on computational mathematics, algorithm design, and machine learning, with a focus on applying these disciplines to data science and the development of innovative software solutions. I am driven by the challenge of bridging rigorous theoretical frameworks with impactful, real-world technological advancements.
           </Typography>
           
           <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>

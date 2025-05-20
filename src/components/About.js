@@ -149,7 +149,7 @@ const About = ({ setActiveSection }) => {
                   }}>
                     <Box 
                       component="img"
-                      src="https://source.unsplash.com/random/400x400/?portrait,mathematician"
+                      src="https://images.unsplash.com/photo-1581091226809-500555809167?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8c2NpZW50aXN0JTIwcG9ydHJhaXR8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=80"
                       alt="Profile"
                       sx={{
                         width: '100%',

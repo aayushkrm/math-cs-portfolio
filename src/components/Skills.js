@@ -19,7 +19,15 @@ import {
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { styled } from '@mui/material/styles';
-import { FaCode, FaServer, FaDatabase, FaTools, FaChartLine, FaRobot } from 'react-icons/fa';
+import { 
+  FaCode, FaServer, FaDatabase, FaTools, FaChartLine, FaRobot, FaReact, FaHtml5, FaCss3Alt, 
+  FaNodeJs, FaPython, FaNetworkWired, FaGitAlt, FaDocker, FaAws, FaLinux, FaTerminal, FaPaintBrush,
+  FaPalette, FaShareAlt, FaCalculator, FaChartPie, FaBrain, FaShapes, FaLightbulb, FaConnectdevelop, FaCube, FaCogs
+} from 'react-icons/fa';
+import { 
+  SiTypescript, SiJavascript, SiNextdotjs, SiTailwindcss, SiMui, SiExpress, SiDjango, SiGraphql, 
+  SiMongodb, SiPostgresql, SiMysql, SiRedis, SiPandas, SiNumpy, SiTensorflow, SiPytorch, SiRust, SiKubernetes
+} from 'react-icons/si'; // Assuming these are available
 
 // Styled Components
 const SkillCard = styled(Paper)(({ theme: { spacing, shape, palette, shadows } }) => ({
@@ -101,45 +109,45 @@ const CategoryIcon = ({ category }) => {
 
 const skills = [
   // Web Development
-  { name: 'React', level: 85, category: 'Web Development', icon: '⚛️' },
-  { name: 'Next.js', level: 80, category: 'Web Development', icon: '⏭️' },
-  { name: 'TypeScript', level: 80, category: 'Web Development', icon: '📝' },
-  { name: 'JavaScript (ES6+)', level: 85, category: 'Web Development', icon: '📜' },
-  { name: 'HTML5 / CSS3', level: 90, category: 'Web Development', icon: '🎨' },
-  { name: 'Tailwind CSS', level: 85, category: 'Web Development', icon: '🎨' },
-  { name: 'Material-UI', level: 85, category: 'Web Development', icon: '🎨' },
+  { name: 'React', level: 85, category: 'Web Development', icon: <FaReact /> },
+  { name: 'Next.js', level: 80, category: 'Web Development', icon: <SiNextdotjs /> },
+  { name: 'TypeScript', level: 80, category: 'Web Development', icon: <SiTypescript /> },
+  { name: 'JavaScript (ES6+)', level: 85, category: 'Web Development', icon: <SiJavascript /> },
+  { name: 'HTML5 / CSS3', level: 90, category: 'Web Development', icon: <><FaHtml5 /><FaCss3Alt /></> },
+  { name: 'Tailwind CSS', level: 85, category: 'Web Development', icon: <SiTailwindcss /> },
+  { name: 'Material-UI', level: 85, category: 'Web Development', icon: <SiMui /> },
   
   // Backend
-  { name: 'Node.js', level: 80, category: 'Backend', icon: '🟢' },
-  { name: 'Express', level: 80, category: 'Backend', icon: '🚀' },
-  { name: 'Python', level: 85, category: 'Backend', icon: '🐍' },
-  { name: 'Django', level: 75, category: 'Backend', icon: '🎸' },
-  { name: 'RESTful APIs', level: 85, category: 'Backend', icon: '🔌' },
-  { name: 'GraphQL', level: 70, category: 'Backend', icon: '📊' },
+  { name: 'Node.js', level: 80, category: 'Backend', icon: <FaNodeJs /> },
+  { name: 'Express', level: 80, category: 'Backend', icon: <SiExpress /> },
+  { name: 'Python', level: 85, category: 'Backend', icon: <FaPython /> },
+  { name: 'Django', level: 75, category: 'Backend', icon: <SiDjango /> },
+  { name: 'RESTful APIs', level: 85, category: 'Backend', icon: <FaNetworkWired /> },
+  { name: 'GraphQL', level: 70, category: 'Backend', icon: <SiGraphql /> },
   
   // Database
-  { name: 'MongoDB', level: 80, category: 'Database', icon: '🍃' },
-  { name: 'PostgreSQL', level: 75, category: 'Database', icon: '🐘' },
-  { name: 'MySQL', level: 70, category: 'Database', icon: '💾' },
-  { name: 'Redis', level: 65, category: 'Database', icon: '🔴' },
+  { name: 'MongoDB', level: 80, category: 'Database', icon: <SiMongodb /> },
+  { name: 'PostgreSQL', level: 75, category: 'Database', icon: <SiPostgresql /> },
+  { name: 'MySQL', level: 70, category: 'Database', icon: <SiMysql /> },
+  { name: 'Redis', level: 65, category: 'Database', icon: <SiRedis /> },
   
   // Data Science
-  { name: 'Pandas', level: 80, category: 'Data Science', icon: '🐼' },
-  { name: 'NumPy', level: 85, category: 'Data Science', icon: '🔢' },
-  { name: 'Matplotlib', level: 75, category: 'Data Science', icon: '📈' },
-  { name: 'Seaborn', level: 70, category: 'Data Science', icon: '📊' },
+  { name: 'Pandas', level: 80, category: 'Data Science', icon: <SiPandas /> },
+  { name: 'NumPy', level: 85, category: 'Data Science', icon: <SiNumpy /> },
+  { name: 'Matplotlib', level: 75, category: 'Data Science', icon: <FaChartPie /> },
+  { name: 'Seaborn', level: 70, category: 'Data Science', icon: <FaPaintBrush /> }, // FaChartLine is category icon
   
   // AI/ML
-  { name: 'TensorFlow', level: 70, category: 'AI/ML', icon: '🧠' },
-  { name: 'PyTorch', level: 65, category: 'AI/ML', icon: '🔥' },
-  { name: 'scikit-learn', level: 75, category: 'AI/ML', icon: '🔍' },
+  { name: 'TensorFlow', level: 70, category: 'AI/ML', icon: <SiTensorflow /> },
+  { name: 'PyTorch', level: 65, category: 'AI/ML', icon: <SiPytorch /> },
+  { name: 'scikit-learn', level: 75, category: 'AI/ML', icon: <FaShapes /> },
   
   // Tools & Others
-  { name: 'Git', level: 85, category: 'Tools', icon: '🔀' },
-  { name: 'Docker', level: 75, category: 'Tools', icon: '🐳' },
-  { name: 'AWS', level: 65, category: 'Tools', icon: '☁️' },
-  { name: 'Linux', level: 75, category: 'Tools', icon: '🐧' },
-  { name: 'Bash Scripting', level: 70, category: 'Tools', icon: '💻' },
+  { name: 'Git', level: 85, category: 'Tools', icon: <FaGitAlt /> },
+  { name: 'Docker', level: 75, category: 'Tools', icon: <FaDocker /> },
+  { name: 'AWS', level: 65, category: 'Tools', icon: <FaAws /> },
+  { name: 'Linux', level: 75, category: 'Tools', icon: <FaLinux /> },
+  { name: 'Bash Scripting', level: 70, category: 'Tools', icon: <FaTerminal /> },
 ];
 
 const categories = ['All', 'Web Development', 'Backend', 'Database', 'Data Science', 'AI/ML', 'Tools'];
@@ -357,11 +365,11 @@ const Skills = ({ setActiveSection }) => {
             </Typography>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 2 }}>
               {[
-                { name: 'Rust', icon: '🦀' },
-                { name: 'Kubernetes', icon: '☸️' },
-                { name: 'TensorFlow.js', icon: '🤖' },
-                { name: 'Web3', icon: '🌐' },
-                { name: 'Three.js', icon: '🎮' },
+                { name: 'Rust', icon: <SiRust /> },
+                { name: 'Kubernetes', icon: <SiKubernetes /> },
+                { name: 'TensorFlow.js', icon: <SiTensorflow /> }, // Re-use, or use FaBrain
+                { name: 'Web3', icon: <FaConnectdevelop /> },
+                { name: 'Three.js', icon: <FaCube /> },
               ].map((item, index) => (
                 <motion.div
                   key={index}
@@ -377,7 +385,7 @@ const Skills = ({ setActiveSection }) => {
                 >
                   <SkillChip
                     icon={
-                      <Box component="span" sx={{ mr: 0.5, fontSize: '1.1rem' }}>
+                      <Box component="span" sx={{ mr: 0.5, fontSize: '1.1rem', display: 'flex', alignItems: 'center' }}>
                         {item.icon}
                       </Box>
                     }
